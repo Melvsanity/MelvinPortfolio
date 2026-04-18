@@ -25,7 +25,7 @@
 
         /* ====================== THEME (LIGHT MODE) ====================== */
         body.light {
-            --bg: #e5e0d8;
+            --bg: #ede8d0;  /* Beige */
             --text: #1e1e1e;
             --muted: #5c5a55;
             --paper: rgba(0,0,0,0.035);
@@ -207,7 +207,7 @@
             display: grid;
             grid-template-columns: 1.1fr 1fr;
             gap: 60px;
-            padding: 120px 60px 80px;
+            padding: 120px 120px 80px;
             align-items: center;
         }
 
@@ -248,6 +248,228 @@
             font-size: 19px;
             color: var(--muted);
             margin-bottom: 32px;
+        }
+
+        /* ====================== HERO BUTTONS ====================== */
+        .hero-btns {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            padding: 12px 22px;
+            background: var(--primary);
+            color: white;
+            font-size: 13px;
+            font-weight: 500;
+            text-decoration: none;
+            border-radius: var(--radius);
+            border: 1px solid var(--primary);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-orange);
+            border-color: var(--accent-orange);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(173, 0, 19, 0.35);
+        }
+
+        .btn-ghost {
+            padding: 12px 22px;
+            background: transparent;
+            color: var(--muted);
+            font-size: 13px;
+            font-weight: 500;
+            text-decoration: none;
+            border-radius: var(--radius);
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
+        }
+
+        .btn-ghost:hover {
+            border-color: var(--accent-orange);
+            color: var(--highlight-gold);
+        }
+
+        /* ====================== FEATURED PROJECT ====================== */
+        .featured-wrapper {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .feat-label {
+            font-size: 16px;
+            letter-spacing: 3px;
+            color: rgba(243,112,30,0.7);
+            font-weight: 500;
+        }
+
+        .feat-card {
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            overflow: hidden;
+            background: var(--paper);
+            transition: border-color 0.3s ease;
+        }
+
+        .feat-card:hover {
+            border-color: var(--accent-orange);
+        }
+
+        .feat-thumb {
+            width: 100%;
+            height: 180px;
+            overflow: hidden;
+            border-bottom: 1px solid var(--border);
+            background: var(--card);
+        }
+
+        .feat-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .feat-thumb-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .fake-chat {
+            width: 75%;
+            height: 78%;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            background: #0a0a0a;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .fake-bar {
+            height: 16px;
+            background: rgba(255,255,255,0.03);
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            padding: 0 8px;
+            flex-shrink: 0;
+        }
+
+        .fake-dot {
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        .fake-msgs {
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            flex: 1;
+        }
+
+        .fake-msg {
+            height: 8px;
+            border-radius: 4px;
+            background: rgba(166,125,67,0.22);
+        }
+
+        .fake-msg-r {
+            align-self: flex-end;
+        }
+
+        .feat-body {
+            padding: 16px;
+        }
+
+        .feat-meta {
+            font-size: 10px;
+            letter-spacing: 2px;
+            color: var(--accent-orange);
+            margin-bottom: 4px;
+            font-weight: 500;
+        }
+
+        .feat-title {
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--text);
+            margin-bottom: 6px;
+        }
+
+        .feat-desc {
+            font-size: 12px;
+            color: var(--muted);
+            line-height: 1.55;
+            margin-bottom: 14px;
+        }
+
+        .feat-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .feat-tags {
+            display: flex;
+            gap: 6px;
+            flex-wrap: wrap;
+        }
+
+        .feat-tag {
+            font-size: 10px;
+            padding: 3px 8px;
+            border: 1px solid var(--border);
+            color: var(--muted);
+            border-radius: 9999px;
+        }
+
+        .feat-link {
+            font-size: 11px;
+            color: var(--accent-orange);
+            text-decoration: none;
+            letter-spacing: 1px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .feat-link:hover {
+            color: var(--highlight-gold);
+        }
+
+        .feat-nav {
+            display: flex;
+            gap: 6px;
+            justify-content: center;
+        }
+
+        .feat-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: rgba(166,125,67,0.3);
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            transition: all 0.25s ease;
+        }
+
+        .feat-dot.active {
+            width: 18px;
+            border-radius: 3px;
+            background: var(--accent-orange);
         }
 
         /* ====================== TECH / ICONS ====================== */
@@ -419,7 +641,7 @@
 
         .section-project {
             min-height: 100vh;
-            padding: 0px 60px;
+            padding: 0px 120px;
         }
 
         .proj-section-label {
@@ -958,8 +1180,7 @@
             <h1 class="fade-child">MELVIN PORCALLA</h1>
             
             <p class="fade-child">
-                I build immersive UI systems, branching narrative engines, and experimental web/game prototypes. 
-                Obsessed with structure, emotional depth, and meaningful interaction.
+                Game dev & UI engineer. I build narrative systems, immersive interfaces, and experimental web prototypes.
             </p>
 
             <div class="tech-icons fade-child">
@@ -969,7 +1190,10 @@
                 <span class="icon">Godot</span>
             </div>
 
-            <a href="#about" class="contact-btn fade-child">Get in Touch</a>
+            <div class="hero-btns fade-child">
+                <a href="#projects" class="btn-primary">View Projects</a>
+                <a href="#about" class="btn-ghost">Get in Touch</a>
+            </div>
 
             <div class="socials fade-child">
                 <a href="#" target="_blank" rel="noopener noreferrer">GitHub</a>
@@ -979,33 +1203,49 @@
         </div>
 
         <div class="hero-right fade">
-            <div class="preview-wrapper">
-                <div class="preview-header">Preview Projects</div>
-                <div class="preview-projects">
+            <div class="featured-wrapper">
+                <div class="feat-label">FEATURED PROJECT</div>
 
-                    <div class="preview-project">
-                        <div class="meta">VN SYSTEM • UNITY</div>
-                        <h3>Chat Narrative Engine</h3>
-                        <p>Branching dialogue system with fake messaging UI and collectible CG triggers.</p>
+                <div class="feat-card">
+                    <div class="feat-thumb">
+                        <!-- Replace this div with: <img src="your-image.png" alt="Project name" /> when you have a screenshot -->
+                        <div class="feat-thumb-placeholder">
+                            <div class="fake-chat">
+                                <div class="fake-bar">
+                                    <span class="fake-dot" style="background:#ad0013;"></span>
+                                    <span class="fake-dot" style="background:#a67d43;"></span>
+                                    <span class="fake-dot" style="background:#f3701e;"></span>
+                                </div>
+                                <div class="fake-msgs">
+                                    <div class="fake-msg" style="width:55%;"></div>
+                                    <div class="fake-msg fake-msg-r" style="width:40%;background:rgba(173,0,19,0.4);"></div>
+                                    <div class="fake-msg" style="width:65%;"></div>
+                                    <div class="fake-msg fake-msg-r" style="width:30%;background:rgba(173,0,19,0.35);"></div>
+                                    <div class="fake-msg" style="width:50%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                        
                     </div>
+                    <div class="feat-body">
+                        <div class="feat-meta">VN SYSTEM • UNITY</div>
+                        <div class="feat-title">Chat Narrative Engine</div>
+                        <div class="feat-desc">Branching dialogue system with fake messaging UI and collectible CG triggers.</div>
+                        <div class="feat-footer">
+                            <div class="feat-tags">
+                                <span class="feat-tag">Unity</span>
+                                <span class="feat-tag">C#</span>
+                                <span class="feat-tag">WebGL</span>
+                            </div>
+                            <a href="#" class="feat-link" target="_blank" rel="noopener noreferrer">VIEW →</a>
+                        </div>
+                    </div>
+                </div>
 
-                    <div class="preview-project">
-                        <div class="meta">WEB EXPERIMENT • C3</div>
-                        <h3>Interactive Story Terminal</h3>
-                        <p>Player-driven narrative using CLI-style interaction and hidden triggers.</p>
-                    </div>
-
-                    <div class="preview-project">
-                        <div class="meta">SYSTEM DESIGN • UNITY</div>
-                        <h3>Relationship Framework</h3>
-                        <p>Dynamic affinity system controlling branching story outcomes.</p>
-                    </div>
-                    
-                    <div class="preview-project">
-                        <div class="meta">SYSTEM DESIGN • UNITY</div>
-                        <h3>Relationship Framework</h3>
-                        <p>Dynamic affinity system controlling branching story outcomes.</p>
-                    </div>
+                <div class="feat-nav">
+                    <button class="feat-dot active" onclick="switchFeat(0)"></button>
+                    <button class="feat-dot" onclick="switchFeat(1)"></button>
+                    <button class="feat-dot" onclick="switchFeat(2)"></button>
                 </div>
             </div>
         </div>
@@ -1270,6 +1510,110 @@
         function toggleCard(card) {
             card.classList.toggle('expanded');
         }
+
+
+        // ================= FEATURED PROJECT DATA =================
+
+        const featProjects = [
+            {
+                meta: "VN SYSTEM • UNITY",
+                title: "Chat Narrative Engine",
+                desc: "Branching dialogue system with fake messaging UI and collectible CG triggers.",
+                tags: ["Unity", "C#", "WebGL"],
+                link: "#",
+            },
+            {
+                meta: "WEB EXPERIMENT • C3",
+                title: "Interactive Story Terminal",
+                desc: "Player-driven narrative using CLI-style interaction and hidden triggers.",
+                tags: ["Construct 3", "JS", "HTML/CSS"],
+                link: "#",
+            },
+            {
+                meta: "SYSTEM DESIGN • UNITY",
+                title: "Relationship Framework",
+                desc: "Dynamic affinity system controlling branching story outcomes.",
+                tags: ["Unity", "C#"],
+                link: "#",
+            },
+        ];
+
+        let currentIndex = 0;
+        let autoInterval = null;
+
+        // ================= SWITCH FUNCTION =================
+        function switchFeat(index) {
+            currentIndex = index;
+            const p = featProjects[index];
+
+            document.querySelector('.feat-meta').textContent = p.meta;
+            document.querySelector('.feat-title').textContent = p.title;
+            document.querySelector('.feat-desc').textContent = p.desc;
+            document.querySelector('.feat-link').href = p.link;
+
+            const tagsEl = document.querySelector('.feat-tags');
+            tagsEl.innerHTML = p.tags.map(t => `<span class="feat-tag">${t}</span>`).join('');
+
+            const thumb = document.querySelector('.feat-thumb');
+            if (p.image) {
+                thumb.innerHTML = `<img src="${p.image}" alt="${p.title}" />`;
+            } else {
+                thumb.innerHTML = `
+                    <div class="feat-thumb-placeholder">
+                        <div class="fake-chat">
+                            <div class="fake-bar">
+                                <span class="fake-dot" style="background:#ad0013;"></span>
+                                <span class="fake-dot" style="background:#a67d43;"></span>
+                                <span class="fake-dot" style="background:#f3701e;"></span>
+                            </div>
+                            <div class="fake-msgs">
+                                <div class="fake-msg" style="width:55%;"></div>
+                                <div class="fake-msg fake-msg-r" style="width:40%;background:rgba(173,0,19,0.4);"></div>
+                                <div class="fake-msg" style="width:65%;"></div>
+                                <div class="fake-msg fake-msg-r" style="width:30%;background:rgba(173,0,19,0.35);"></div>
+                                <div class="fake-msg" style="width:50%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }
+
+            document.querySelectorAll('.feat-dot').forEach((d, i) => {
+                d.classList.toggle('active', i === index);
+            });
+        }
+
+        // ================= AUTO ROTATE =================
+        function startAutoScroll() {
+            autoInterval = setInterval(() => {
+                currentIndex = (currentIndex + 1) % featProjects.length;
+                switchFeat(currentIndex);
+            }, 4000); // change every 4s
+        }
+
+        function stopAutoScroll() {
+            clearInterval(autoInterval);
+        }
+
+        // ================= INIT =================
+        switchFeat(0);
+        startAutoScroll();
+
+        // ================= PAUSE ON HOVER =================
+        const container = document.querySelector('.featured-project'); // wrap element
+
+        if (container) {
+            container.addEventListener('mouseenter', stopAutoScroll);
+            container.addEventListener('mouseleave', startAutoScroll);
+        }
+
+        // ================= DOT CLICK SUPPORT =================
+        document.querySelectorAll('.feat-dot').forEach((dot, i) => {
+            dot.addEventListener('click', () => {
+                switchFeat(i);
+            });
+        });
+
     </script>
 
 </body>
