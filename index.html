@@ -420,6 +420,8 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            flex-wrap: wrap;   /* ← allows wrapping */
+            gap: 8px;          /* ← adds spacing between rows */
         }
 
         .feat-actions {
@@ -686,6 +688,9 @@
             background: var(--paper);
             transition: border-color 0.3s ease, transform 0.3s ease;
             cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            min-height: 320px;
         }
 
         .proj-card:hover {
@@ -708,18 +713,6 @@
         .proj-card:hover .proj-top-bar,
         .proj-card.expanded .proj-top-bar {
             opacity: 1;
-        }
-
-        .proj-card {
-            border-radius: var(--radius);
-            overflow: hidden;
-            border: 1px solid var(--border);
-            background: var(--paper);
-            transition: border-color 0.3s ease, transform 0.3s ease;
-            cursor: pointer;
-            display: flex;
-            flex-direction: column;
-            min-height: 320px;
         }
 
         .proj-thumb {
@@ -754,10 +747,6 @@
         .proj-body {
             padding: 14px 16px 16px;
             flex: 1;
-        }
-
-        .proj-body {
-            padding: 14px 16px 16px;
         }
 
         .proj-meta {
@@ -1536,21 +1525,28 @@
                 title: "Chat Narrative Engine",
                 desc: "Branching dialogue system with fake messaging UI and collectible CG triggers.",
                 tags: ["Unity", "C#", "WebGL"],
-                link: "#",
+                links: [
+                    { label: "GitHub", url: "#" },
+                    { label: "itch.io", url: "#" }
+                ]
             },
             {
                 meta: "WEB EXPERIMENT • C3",
                 title: "Interactive Story Terminal",
                 desc: "Player-driven narrative using CLI-style interaction and hidden triggers.",
                 tags: ["Construct 3", "JS", "HTML/CSS"],
-                link: "#",
+                links: [
+                    { label: "GitHub", url: "#" }
+                ]
             },
             {
                 meta: "SYSTEM DESIGN • UNITY",
                 title: "Relationship Framework",
                 desc: "Dynamic affinity system controlling branching story outcomes.",
                 tags: ["Unity", "C#"],
-                link: "#",
+                links: [
+                    { label: "GitHub", url: "#" }
+                ]
             },
         ];
 
@@ -1565,7 +1561,19 @@
             document.querySelector('.feat-meta').textContent = p.meta;
             document.querySelector('.feat-title').textContent = p.title;
             document.querySelector('.feat-desc').textContent = p.desc;
-            document.querySelector('.feat-link').href = p.link;
+            
+            const actions = document.querySelector('.feat-actions');
+
+            actions.innerHTML = p.links
+                .map(l => `
+                    <a href="${l.url}" 
+                    class="feat-link" 
+                    target="_blank" 
+                    rel="noopener noreferrer">
+                    ${l.label}
+                    </a>
+                `)
+                .join('');
 
             const tagsEl = document.querySelector('.feat-tags');
             tagsEl.innerHTML = p.tags.map(t => `<span class="feat-tag">${t}</span>`).join('');
@@ -1616,7 +1624,7 @@
         startAutoScroll();
 
         // ================= PAUSE ON HOVER =================
-        const container = document.querySelector('.featured-project'); // wrap element
+        const container = document.querySelector('.feat-card');
 
         if (container) {
             container.addEventListener('mouseenter', stopAutoScroll);
