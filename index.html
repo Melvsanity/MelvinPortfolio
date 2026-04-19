@@ -422,6 +422,13 @@
             align-items: center;
         }
 
+        .feat-actions {
+            display: flex;
+            gap: 0;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
         .feat-tags {
             display: flex;
             gap: 6px;
@@ -443,10 +450,14 @@
             letter-spacing: 1px;
             font-weight: 500;
             transition: color 0.2s;
+            padding: 3px 10px;
+            border: 1px solid rgba(243,112,30,0.35);
+            border-radius: 5px;
         }
 
         .feat-link:hover {
             color: var(--highlight-gold);
+            border-color: var(--highlight-gold);
         }
 
         .feat-nav {
@@ -1140,12 +1151,14 @@
         }
 
         @media (max-width: 400px) {
-            nav a:not(.active) {
-                display: none;
+            nav {
+                gap: 0;
+                padding: 4px;
             }
 
-            nav a.active {
-                display: block;
+            nav a {
+                font-size: 10px;
+                padding: 4px 7px;
             }
         }
 
@@ -1237,7 +1250,10 @@
                                 <span class="feat-tag">C#</span>
                                 <span class="feat-tag">WebGL</span>
                             </div>
-                            <a href="#" class="feat-link" target="_blank" rel="noopener noreferrer">VIEW →</a>
+                            <div class="feat-actions">
+                                <a href="#" class="feat-link" target="_blank" rel="noopener noreferrer">GitHub</a>
+                                <a href="#" class="feat-link" target="_blank" rel="noopener noreferrer">itch.io</a>
+                            </div>
                         </div>
                     </div>
                 </div>
